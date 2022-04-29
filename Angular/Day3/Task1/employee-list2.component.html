@@ -1,0 +1,19 @@
+<h1>Application Developmnet Using Angular</h1>
+<hr/>
+
+<button [disabled]="property" (click)="LoadMore()">Load More </button>
+<div class="row">
+  
+  <div *ngFor="let item of EmpArray | slice : start : end " class="column">
+      <div  class="card" >
+  
+          <div class="container">
+            <h4><b> Employee No:{{item.Empno}}</b></h4>
+            <p> Employee Name : {{item.EmpName}}</p>
+            <p>Employee Job :{{item.EmoJob}}</p>
+            <p>Employee Salary: {{item.Salary}}</p>
+            <p>Department :{{item.Dept}}</p>
+          </div>
+        </div>
+   </div>
+</div>
