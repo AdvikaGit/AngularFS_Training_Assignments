@@ -1,0 +1,32 @@
+<style>
+.bg1{ background-color :  lightblue;  }
+    .bg2{ background-color :  lightgreen;  }
+    .bg3{ background-color :  pink;  }
+
+</style>
+<table border="2" width="400" cellspacing="0" cellpadding="5">
+    <tr  class="bg1">
+      <th>Product Id</th>
+      <th>Product Name</th>
+      <th>Product Price</th>
+      <th>Product Category</th>
+      <th>Product Qty</th>
+      <th>Product Picture</th>
+     
+    </tr>
+   
+    <tr *ngFor="let item of ProdArray; let i = index; let isEven = even; let isOdd = odd"
+    [ngClass]="{'bg2':isEven, 'bg3':isOdd}">
+        <td>{{item.pid}}</td>
+        <td>{{item.pname}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.qty}}</td>
+        <td><img [src]="item.picture" width="20"></td>
+    </tr>
+   
+    <tr *ngIf="ProdArray.length == 0">
+      <td colspan="4">** No departments avaialble in the database</td>
+    </tr>
+   
+   </table> 
