@@ -1,0 +1,123 @@
+<h3>Working with directives in Angular -- Multiple display models</h3>
+<hr/>
+
+<style>
+    .bg1{ background-color :  lightblue;  }
+    .bg2{ background-color :  lightgreen;  }
+    .bg3{ background-color :  pink;  }
+  
+    .c1
+    {
+      color : dodgerblue;
+      border:1px solid dodgerblue;
+      width :  100px;
+      margin : 5px;
+      float : left;
+      text-align : center;
+      background-color : white;
+    }
+  
+    .c2
+    {
+       background-color: dodgerblue;
+       color : white;
+       margin: 0px;
+    }
+  
+  </style>
+
+
+
+
+<div>
+    Display Mode :  <br>
+    <img   (mouseover)="Image_Click('Details')"   src="assets/prod.png" width="60" height="60"/> &nbsp;
+     <img   (mouseover)="Image_Click('Large Image')"   src="assets/large.png" width="60" height="60"/> 
+    &nbsp;<img (mouseover)="Image_Click('Small Image')" src="assets/small.png" width="60" height="60"/> &nbsp;
+    <img (mouseover)="Image_Click('List')"  src="assets/list.png" width="60" height="60" />
+</div>
+
+<section [ngSwitch]="displayMode">
+<article *ngSwitchCase=" 'Details' ">
+
+<table border="2" width="400" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>Product Id</th>
+      <th>Product Name</th>
+      <th>Product Price</th>
+      <th>Product Category</th>
+      <th>Product Qty</th>
+      <th>Product Picture</th>
+     
+    </tr>
+   
+    <tr *ngFor="let item of ProdArray">
+        <td>{{item.pid}}</td>
+        <td>{{item.pname}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.qty}}</td>
+        <td><img [src]="item.picture" width="20"></td>
+    </tr>
+   
+    <tr *ngIf="ProdArray.length == 0">
+      <td colspan="4">** No departments avaialble in the database</td>
+    </tr>
+   
+   </table> 
+
+</article>
+<article *ngSwitchCase=" 'Large Image' ">
+
+
+   <div class="c1" *ngFor="let item of ProdArray">
+       <span><img [src]="item.picture" width="40"></span>
+    <p  class="c2">{{item.pname}}</p>
+    <span>{{item.price}}</span>
+    <br/>
+  </div> 
+
+
+</article>
+
+<article *ngSwitchCase=" 'Small Image' ">
+
+
+    
+  <div class="c1" *ngFor="let item of ProdArray">
+    <span><img [src]="item.picture" width="40"></span>
+ <p  class="c2">{{item.pname}}</p>
+ <span>{{item.category}}</span><br>
+ <span> ${{item.price}}</span>
+ 
+ <br/>
+</div>
+ 
+ 
+ </article>
+ 
+ <article *ngSwitchCase=" 'List' ">
+
+
+    <ul>
+        <li  *ngFor="let item of ProdArray">
+            The
+            <span style="color:blue;text-decoration: underline;">{{item.pname}}</span>
+             price is
+            <span style="color: green;">{{item.price}}</span>
+            course.
+        </li>
+      </ul> 
+    
+   
+   
+   </article>
+</section>
+
+
+
+
+
+
+
+
