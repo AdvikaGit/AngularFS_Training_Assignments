@@ -1,0 +1,39 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "empname": "Scott",
+      "job": "Manager",
+      "salary": "56000",
+      "dept": "Hr"
+    },
+    {
+      "id": 3,
+      "empname": "Steven",
+      "job": "Tester",
+      "salary": "66000",
+      "dept": "Testing"
+    },
+    {
+      "id": "4",
+      "empname": "Kelvin",
+      "job": "Manager",
+      "salary": "78000",
+      "dept": "Testing"
+    },
+    {
+      "id": "5",
+      "empname": "Jorge",
+      "job": "Deleoper",
+      "salary": "86000",
+      "dept": "Developmnet"
+    },
+    {
+      "id": "6",
+      "empname": "Newton",
+      "job": "QA",
+      "salary": "78999",
+      "dept": "Testing"
+    }
+  ]
+}
