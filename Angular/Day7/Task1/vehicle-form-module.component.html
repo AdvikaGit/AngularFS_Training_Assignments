@@ -1,0 +1,74 @@
+<style>
+	.error {   color : Red;  }
+
+    
+.signup-form {
+  font-family: "Roboto", sans-serif;
+  width:650px;
+  margin:30px auto;
+  background:linear-gradient(to right, #ffffff 0%, #fafafa 50%, #ffffff 99%);
+  border-radius: 10px;
+  background:linear-gradient(to right, pink 0%, #385D6C 50%, #38dab6 99%);
+}
+</style>
+
+<h3> Angular Form Validations using  Model Driven  </h3>
+<hr/>
+
+<form class="signup-form" [formGroup]=" VehicleForm" (submit)="submit_click()">
+  <fieldset>
+      <legend>Vehicle Registration Form</legend>
+
+      Owner Name:<input type="text" formControlName="OwnerName"  />
+      <span *ngIf=" VehicleForm.controls['OwnerName'].invalid && VehicleForm.controls['OwnerName'].dirty" class="error">Owner Name is required</span>
+
+      <br/><br/>
+
+      Contact Number:
+        <input type="text" formControlName="ContactNo"  />
+      <span *ngIf="VehicleForm.controls['ContactNo'].invalid && VehicleForm.controls['ContactNo'].dirty" class="error">Number is mamximun 10 digits</span>
+      <br/><br/>
+
+      Owner Email :
+      <input  formControlName="Owneremail" />
+      <span  class="error"  *ngIf="VehicleForm.controls['Owneremail'].invalid && VehicleForm.controls['Owneremail'].dirty">
+        Enter proper e-mail id
+      </span>
+      <br><br>
+
+      Vehicle Reg No  : <input formControlName="VehicleRegNo"  />
+      <span  class="error"  *ngIf="VehicleForm.controls['VehicleRegNo'].invalid && VehicleForm.controls['VehicleRegNo'].dirty">
+     Enter Proper Vehicle Reg Number
+    </span>
+    <br><br>
+
+    Address : <input formControlName="Address"  />
+    <span  class="error"  *ngIf="VehicleForm.controls['Address'].invalid && VehicleForm.controls['Address'].dirty">
+   Address is required
+  </span>
+  <br><br>
+
+    Model :
+    <input 	formControlName="Model"  />
+      <span  class="error"  *ngIf="VehicleForm.controls['Model'].invalid && VehicleForm.controls['Model'].dirty">
+        Enter Proper Model
+      </span>
+    <br><br>
+   
+    Color :
+    <input 	formControlName="color"  />
+      <span  class="error"  *ngIf="VehicleForm.controls['color'].invalid && VehicleForm.controls['color'].dirty">
+        Color is required
+      </span>
+    <br><br>
+
+    Year :
+    <input 	formControlName="year"  />
+      <span  class="error"  *ngIf="VehicleForm.controls['year'].invalid && VehicleForm.controls['year'].dirty">
+        Enter Proper Yrar
+      </span>
+    <br><br>
+
+      <button [disabled]="VehicleForm.invalid">Register</button>
+  </fieldset>
+</form>
