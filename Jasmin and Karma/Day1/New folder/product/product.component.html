@@ -1,0 +1,17 @@
+<h1>Product Details</h1>
+<hr>
+    <fieldset>
+        <legend> Product Details</legend>
+      
+            Productname:  <input [(ngModel)]="pname" name="ProductName" required="true"><br>
+            
+      
+           Quantuty:  <input [(ngModel)]="qty"type="text" name="Quantity" required="true"><br>
+     
+          Price: <input [(ngModel)]="price "type="text" name="Price" required="true"><br>
+    
+      </fieldset>
+   
+ <button  mat-raised-button color="primary" (click)="get_total_amount()">Total</button>
+<br>
+ <span>{{total}}</span>
