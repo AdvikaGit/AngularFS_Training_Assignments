@@ -1,0 +1,22 @@
+
+
+<style>
+  .c1
+  {
+      border: 1px solid gray;
+      border-radius : 10px;
+      width : 150px;
+      padding : 5px;
+      text-align: center;
+      float: left;
+      margin: 5px;
+      box-shadow: 5px 5px 2px black;
+  }
+</style>
+
+<div  class="c1" >
+  <h3 style="margin: 2px;color:Red;"> {{item.pname}} </h3>
+  <u> Productno :   {{item.pid}} </u>  <br/>
+  Price: <span style="color:Green;"> {{item.Price}} </span>   <br/>
+  <a href="javascript:void(0)"  (click)="removeprod(item.pid)">Remove</a>
+</div>
